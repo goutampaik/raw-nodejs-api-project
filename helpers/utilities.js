@@ -28,4 +28,23 @@ utilities.hash = (str) => {
   }
 };
 
+//Create Random String
+utilities.createRandomString = (strlength) => {
+  let length = strlength;
+  length = typeof strlength === "number" && strlength > 0 ? strlength : false;
+  if (length) {
+    const possiblecharacters = "abcdefghijklmnopqrstuvwxyz1234567890";
+    let output = "";
+    for (let i = 1; i <= length; i += 1) {
+      let randomCharacter = possiblecharacters.charAt(
+        Math.floor(Math.random() * possiblecharacters.length)
+      );
+      output += randomCharacter;
+    }
+    return output;
+  } else {
+    return false;
+  }
+};
+
 module.exports = utilities;
